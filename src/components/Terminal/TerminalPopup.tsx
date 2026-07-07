@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useCallback } from "react";
-import { useTranslations } from "next-intl";
 import { About } from "../Sections/About";
 import { Skills } from "../Sections/Skills";
 import { Projects } from "../Sections/Projects";
@@ -33,13 +32,11 @@ const sectionLabels: Record<SectionKey, string> = {
 };
 
 export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
-  const t = useTranslations("site");
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {
@@ -60,21 +57,22 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
           onClick={onClose}
         />
         <motion.div
-          className="relative w-full h-dvh sm:h-auto sm:max-h-[85dvh] sm:max-w-[720px] sm:border sm:border-accent-green bg-bg-surface flex flex-col"
+          className="relative w-full h-dvh sm:h-auto sm:max-h-[85dvh] sm:max-w-180 sm:border sm:border-accent-green bg-bg-surface flex flex-col"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.15 }}
         >
-          <div className="flex items-center justify-between border-b border-accent-green px-4 py-2">
+          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-accent-green bg-bg-surface px-4 py-2">
             <span className="text-accent-green text-sm">
               [{sectionLabels[section]}]
             </span>
             <button
               onClick={onClose}
-              className="text-accent-green hover:text-text-primary text-sm cursor-pointer"
+              className="flex items-center justify-center size-8 sm:size-auto text-accent-green hover:text-text-primary text-base sm:text-sm cursor-pointer rounded hover:bg-white/10 sm:hover:bg-transparent"
+              aria-label="Cerrar"
             >
-              {t("close")}
+              ✕
             </button>
           </div>
           <div className="p-4 flex-1 overflow-y-auto sm:max-h-[70dvh]">

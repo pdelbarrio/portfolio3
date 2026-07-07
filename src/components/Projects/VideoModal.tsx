@@ -43,6 +43,13 @@ export function VideoModal({ url, onClose }: VideoModalProps) {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
       >
+        <button
+          onClick={onClose}
+          className="absolute -top-3 -right-3 z-10 flex items-center justify-center size-10 sm:size-8 rounded-full bg-bg-surface border border-accent-green text-accent-green hover:text-text-primary hover:bg-accent-green/20 text-lg sm:text-base cursor-pointer shadow-lg"
+          aria-label="Cerrar video"
+        >
+          ✕
+        </button>
         <iframe
           src={getVimeoEmbedUrl(url)}
           className="w-full h-full"

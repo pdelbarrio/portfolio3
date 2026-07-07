@@ -12,6 +12,7 @@ interface ProjectDetailProps {
     title: string;
     fullDescription: string;
     image: string | null;
+    imageOrientation?: "horizontal" | "vertical";
     tags: string[];
     links: ProjectLink[];
     status?: string;
@@ -29,6 +30,8 @@ export function ProjectDetail({
   onBack,
   onPlayVideo,
 }: ProjectDetailProps) {
+  const isVertical = project.imageOrientation === "vertical";
+
   return (
     <div className="space-y-4">
       <button
@@ -45,20 +48,30 @@ export function ProjectDetail({
         )}
       </div>
 
-      {project.image && (
-        <div className="max-w-[800px] mx-auto border border-accent-green/30 overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      )}
+      <div
+        className={`gap-6 ${isVertical ? "grid grid-cols-1 md:grid-cols-2 items-start" : "space-y-4"}`}
+      >
+        {project.image && (
+          <div
+            className={`border border-accent-green/30 overflow-hidden w-full ${
+              isVertical
+                ? "max-w-87.5 mx-auto md:mx-0 justify-self-center"
+                : "max-w-200 mx-auto"
+            }`}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        )}
 
-      <p className="text-sm leading-relaxed">{project.fullDescription}</p>
+        <p className="text-sm leading-relaxed">{project.fullDescription}</p>
+      </div>
 
       {project.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 pt-2">
           {project.tags.map((tag) => (
             <SkillTag key={tag} label={tag} />
           ))}
