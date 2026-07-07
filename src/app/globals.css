@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-surface: #111111;
+  --color-bg-border: #1a1a1a;
+  --color-text-primary: #e0e0e0;
+  --color-text-dim: #666666;
+  --color-accent-green: #00ff41;
+  --color-accent-neon: #7fff00;
+  --color-accent-amber: #ffb000;
+  --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}

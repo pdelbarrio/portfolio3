@@ -1,0 +1,133 @@
+{
+  "site": {
+    "title": "PABLO DEL BARRIO",
+    "subtitle": "Developer",
+    "nav": {
+      "about": "ABOUT",
+      "skills": "SKILLS",
+      "projects": "PROJECTS",
+      "contact": "CONTACT",
+      "cv": "CV"
+    },
+    "hint": "↑↓ NAVIGATE  ·  ENTER SELECT  ·  ESC CLOSE",
+    "close": "X"
+  },
+  "about": {
+    "text": "Software developer con base en Barcelona. Formado en el ecosistema React y Next.js, con foco en frontend pero con perspectiva fullstack. Con la IA integrada en el flujo de desarrollo para adaptarme a cualquier tecnología o contexto.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/pablo-del-barrio",
+      "github": "https://github.com/pdelbarrio",
+      "email": "pablodbb@gmail.com"
+    }
+  },
+  "skills": {
+    "currentTitle": "Stack actual",
+    "current": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Styled Components",
+      "Supabase",
+      "Node.js",
+      "Mongodb",
+      "SQL",
+      "Docker",
+      "REST APIs",
+      "Git",
+      "Jest",
+      "Cypress",
+      "PWA"
+    ],
+    "learningTitle": "Aprendiendo",
+    "learning": [
+      "React Native",
+      "Anthropic API",
+      "OpenAI API",
+      "Agentic workflows",
+      "OpenCode"
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": {
+      "atbcn": {
+        "title": "atbcn.info",
+        "shortDescription": "Agenda colaborativa de eventos culturales de Barcelona.",
+        "fullDescription": "Aplicación para estar al día de los eventos locales. Explora eventos de tu ciudad, consulta detalles esenciales, añade tus propios eventos y disfruta de una interfaz intuitiva. Construida con Next.js App Router, React Server Components y Supabase como BaaS. Incluye sistema de moderación para validación de eventos, integración con la API de Anthropic para scraping y PWA para experiencia de app nativa. ",
+        "image": "https://res.cloudinary.com/getoutbcn/image/upload/v1783420404/atbcnpfv4_tl8twn.png",
+        "tags": [
+          "Next.js",
+          "HTML",
+          "JavaScript",
+          "React Server Components",
+          "TypeScript",
+          "Supabase",
+          "Tailwind",
+          "Figma",
+          "PWA"
+        ],
+        "links": [
+          { "label": "App", "url": "https://atbcn.info" },
+          { "label": "Repo", "url": "https://github.com/pdelbarrio/atbcn3" },
+          { "label": "Video", "url": "https://vimeo.com/860599617" }
+        ],
+        "status": "online"
+      },
+      "plants": {
+        "title": "Plants App",
+        "shortDescription": "Esta aplicación integra la API de OpenAI para identificar y analizar plantas a partir de una imagen.",
+        "fullDescription": "Permite identificar y analizar plantas a partir de una foto usando IA. El sistema devuelve nombre, descripción, dificultad de cuidado, frecuencia de riego, necesidades de luz y temperatura ideal. Las plantas identificadas se guardan en base de datos y pueden consultarse o eliminarse posteriormente.",
+        "image": "https://res.cloudinary.com/getoutbcn/image/upload/v1783420404/plantsaipfv4_bpgb3z.png",
+        "tags": [
+          "Next.js",
+          "React",
+          "OpenAI",
+          "TypeScript",
+          "Tailwind",
+          "MongoDB"
+        ],
+        "links": [
+          { "label": "App", "url": "https://ai-plants.vercel.app/" },
+          { "label": "Repo", "url": "https://github.com/pdelbarrio/ai-plants" },
+          { "label": "Video", "url": "https://vimeo.com/1090117478" }
+        ],
+        "status": "online"
+      },
+      "intrathecapp": {
+        "title": "Intrathecapp",
+        "shortDescription": "Aplicación web que calcula dosis de medicamentos para uso farmacéutico.",
+        "fullDescription": "Frontend de una aplicación web que calcula dosis de un medicamento para administrar a pacientes. La lógica de la calculadora se implementó con POO en JavaScript. Backend en Django, frontend en React con Hooks y Context para gestión de estado y PWA  para la persistencia de datos. La aplicación se encuentra en standby en un repositorio privado pero se puede ver su funcionamiento clicando en la videodemo que aparece más abajo.",
+        "image": "https://res.cloudinary.com/getoutbcn/image/upload/v1676051276/portfolio/projects/prialt_qlgvbb.png",
+        "tags": ["HTML", "JavaScript", "POO", "CSS", "React"],
+        "links": [{ "label": "Video", "url": "https://vimeo.com/720597336" }],
+        "status": "offline"
+      },
+      "getoutbcn": {
+        "title": "GetOutBCN (WIP)",
+        "shortDescription": "Base de datos colaborativa de lugares interesantes en Barcelona realizada con React Native. En construcción usando OpenCode como agente de desarrollo y metodología SDD.",
+        "fullDescription": "Work in progress. Base de datos colaborativa de lugares interesantes en Barcelona realizada con React Native. En construcción con metodología Spec-Driven Development y OpenCode como agente de código. El desarrollo de este proyecto documenta un flujo de trabajo empresarial con IA: desde la especificación hasta la implementación.",
+        "image": null,
+        "tags": ["React Native", "OpenCode", "SDD"],
+        "links": [],
+        "status": "Work in progress"
+      }
+    }
+  },
+  "contact": {
+    "email": "pablodbb@gmail.com",
+    "location": "Barcelona",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
+  },
+  "cv": {
+    "title": "CV",
+    "spanish": "Descargar CV en Castellano",
+    "english": "Descargar CV en Inglés"
+  }
+}
