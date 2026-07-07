@@ -9,7 +9,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pablo Del Barrio | Portfolio",
+  title: "Pablo del Barrio | Portfolio",
   description: "Software Developer Portfolio",
 };
 

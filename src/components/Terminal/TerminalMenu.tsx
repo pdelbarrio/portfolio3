@@ -23,11 +23,15 @@ export function TerminalMenu() {
       switch (e.key) {
         case "ArrowUp":
           e.preventDefault();
-          setSelectedIndex((prev) => (prev > 0 ? prev - 1 : sections.length - 1));
+          setSelectedIndex((prev) =>
+            prev > 0 ? prev - 1 : sections.length - 1,
+          );
           break;
         case "ArrowDown":
           e.preventDefault();
-          setSelectedIndex((prev) => (prev < sections.length - 1 ? prev + 1 : 0));
+          setSelectedIndex((prev) =>
+            prev < sections.length - 1 ? prev + 1 : 0,
+          );
           break;
         case "Enter":
           e.preventDefault();
@@ -35,7 +39,7 @@ export function TerminalMenu() {
           break;
       }
     },
-    [openSection, selectedIndex]
+    [openSection, selectedIndex],
   );
 
   useEffect(() => {
@@ -50,10 +54,10 @@ export function TerminalMenu() {
       <div className="flex flex-col items-center justify-center min-h-dvh px-4 py-8">
         <div className="w-full max-w-lg">
           <div className="text-center mb-8">
-            <h1 className="text-xl sm:text-2xl tracking-wider text-text-primary">
+            <h1 className="text-xl sm:text-2xl tracking-wider text-accent-green ">
               {t("title")}
             </h1>
-            <p className="text-text-dim text-sm mt-1 flex items-center justify-center gap-1">
+            <p className="text-accent-green  text-sm mt-1 flex items-center justify-center gap-1">
               {t("subtitle")}
               <Cursor />
             </p>
