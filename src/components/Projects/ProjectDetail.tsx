@@ -33,7 +33,7 @@ export function ProjectDetail({
   const isVertical = project.imageOrientation === "vertical";
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 w-full max-w-full overflow-hidden">
       <button
         onClick={onBack}
         className="text-accent-green text-xs hover:text-accent-neon cursor-pointer"
@@ -42,9 +42,9 @@ export function ProjectDetail({
       </button>
 
       <div className="flex items-center justify-between">
-        <h3 className="text-accent-green text-sm">{project.title}</h3>
+        <h3 className="text-accent-green text-sm truncate">{project.title}</h3>
         {project.status && (
-          <span className="text-accent-amber text-xs">{project.status}</span>
+          <span className="text-accent-amber text-xs flex-shrink-0 ml-2">{project.status}</span>
         )}
       </div>
 
@@ -55,19 +55,20 @@ export function ProjectDetail({
           <div
             className={`border border-accent-green/30 overflow-hidden w-full ${
               isVertical
-                ? "max-w-87.5 mx-auto md:mx-0 justify-self-center"
-                : "max-w-200 mx-auto"
+                ? "max-w-full md:max-w-87.5 mx-auto md:mx-0 justify-self-center"
+                : "max-w-full md:max-w-200 mx-auto"
             }`}
           >
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-w-full"
+              loading="lazy"
             />
           </div>
         )}
 
-        <p className="text-sm leading-relaxed">{project.fullDescription}</p>
+        <p className="text-sm leading-relaxed break-words">{project.fullDescription}</p>
       </div>
 
       {project.tags.length > 0 && (
@@ -85,7 +86,7 @@ export function ProjectDetail({
               <button
                 key={link.label}
                 onClick={() => onPlayVideo(link.url)}
-                className="border border-accent-green text-accent-green px-3 py-1.5 text-sm hover:bg-accent-green/10 cursor-pointer"
+                className="border border-accent-green text-accent-green px-3 py-1.5 text-sm hover:bg-accent-green/10 cursor-pointer flex-shrink-0"
               >
                 ▶ {link.label}
               </button>
@@ -95,7 +96,7 @@ export function ProjectDetail({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-accent-green text-accent-green px-3 py-1.5 text-sm hover:bg-accent-green/10"
+                className="border border-accent-green text-accent-green px-3 py-1.5 text-sm hover:bg-accent-green/10 flex-shrink-0"
               >
                 {link.label} ↗
               </a>

@@ -44,10 +44,18 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
+  useEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4"
+        className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 overscroll-contain"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -57,7 +65,7 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
           onClick={onClose}
         />
         <motion.div
-          className="relative w-full h-screen sm:h-auto sm:max-h-[85dvh] sm:max-w-180 sm:border sm:border-accent-green bg-bg-surface flex flex-col overflow-hidden"
+          className="relative w-full h-full sm:h-auto sm:max-h-[85dvh] sm:max-w-180 sm:border sm:border-accent-green bg-bg-surface flex flex-col overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
@@ -75,7 +83,7 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
               ✕
             </button>
           </div>
-          <div className="p-4 flex-1 overflow-y-auto">
+          <div className="p-4 flex-1 overflow-y-auto overscroll-contain">
             {sectionComponents[section]}
           </div>
         </motion.div>

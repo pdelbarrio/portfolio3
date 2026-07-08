@@ -1,5 +1,5 @@
 import { JetBrains_Mono } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -11,6 +11,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Pablo del Barrio | Portfolio",
   description: "Software Developer Portfolio",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
