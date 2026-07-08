@@ -47,7 +47,7 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center sm:p-4"
+        className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -57,25 +57,25 @@ export function TerminalPopup({ section, onClose }: TerminalPopupProps) {
           onClick={onClose}
         />
         <motion.div
-          className="relative w-full h-dvh sm:h-auto sm:max-h-[85dvh] sm:max-w-180 sm:border sm:border-accent-green bg-bg-surface flex flex-col"
+          className="relative w-full h-screen sm:h-auto sm:max-h-[85dvh] sm:max-w-180 sm:border sm:border-accent-green bg-bg-surface flex flex-col overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.15 }}
         >
-          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-accent-green bg-bg-surface px-4 py-2">
+          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-accent-green bg-bg-surface px-4 py-3 flex-shrink-0">
             <span className="text-accent-green text-sm">
               [{sectionLabels[section]}]
             </span>
             <button
               onClick={onClose}
-              className="flex items-center justify-center size-8 sm:size-auto text-accent-green hover:text-text-primary text-base sm:text-sm cursor-pointer rounded hover:bg-white/10 sm:hover:bg-transparent"
+              className="flex items-center justify-center size-10 sm:size-auto text-accent-green hover:text-text-primary text-xl sm:text-sm cursor-pointer rounded hover:bg-white/10 sm:hover:bg-transparent"
               aria-label="Cerrar"
             >
               ✕
             </button>
           </div>
-          <div className="p-4 flex-1 overflow-y-auto sm:max-h-[70dvh]">
+          <div className="p-4 flex-1 overflow-y-auto">
             {sectionComponents[section]}
           </div>
         </motion.div>
