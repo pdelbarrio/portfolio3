@@ -113,7 +113,9 @@
         "fullDescription": "Work in progress. Base de datos colaborativa de lugares interesantes en Barcelona realizada con React Native. En construcción con metodología Spec-Driven Development y OpenCode como agente de código. El desarrollo de este proyecto documenta un flujo de trabajo empresarial con IA: desde la especificación hasta la implementación.",
         "image": null,
         "tags": ["React Native", "OpenCode", "SDD"],
-        "links": [],
+        "links": [
+          { "label": "Repo", "url": "https://github.com/pdelbarrio/getoutbcn" }
+        ],
         "status": "Work in progress"
       }
     }

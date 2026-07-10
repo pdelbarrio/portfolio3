@@ -113,7 +113,9 @@
         "fullDescription": "Work in progress. A mobile app for a collaborative geolocalized directory in Barcelona. Under construction with Spec-Driven Development methodology and OpenCode as the code agent. This project documents a workflow with AI: from specification to implementation.",
         "image": null,
         "tags": ["React Native", "OpenCode", "SDD"],
-        "links": [],
+        "links": [
+          { "label": "Repo", "url": "https://github.com/pdelbarrio/getoutbcn" }
+        ],
         "status": "Work in progress"
       }
     }
