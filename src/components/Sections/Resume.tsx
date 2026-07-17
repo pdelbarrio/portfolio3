@@ -8,14 +8,14 @@ export function Resume() {
   return (
     <div className="space-y-4 text-sm">
       <a
-        href="https://res.cloudinary.com/getoutbcn/image/upload/v1783413329/PablodelBarrioSpanishCV2026_zy930k.pdf"
+        href="https://res.cloudinary.com/getoutbcn/image/upload/v1784293242/PablodelBarrioSpanishCV2026_ij1yz3.pdf"
         target="_blank"
         className="block border border-accent-green text-accent-green px-4 py-3 hover:bg-accent-green/10 text-center"
       >
         {t("spanish")}
       </a>
       <a
-        href="https://res.cloudinary.com/getoutbcn/image/upload/v1783413329/PablodelBarrioEnglishCV2026_i9j87k.pdf"
+        href="https://res.cloudinary.com/getoutbcn/image/upload/v1784293242/PablodelBarrioEnglishCV2026_csgfui.pdf"
         target="_blank"
         className="block border border-accent-green text-accent-green px-4 py-3 hover:bg-accent-green/10 text-center"
       >
